@@ -28,19 +28,17 @@ package com.iainlobb.gamepadtesters;
 import com.iainlobb.gamepad.Gamepad;
 import com.iainlobb.gamepad.GamepadView;
 import com.iainlobb.gamepad.OnScreenJoystick;
-import nme.display.MovieClip;
-import nme.display.Shape;
-import nme.display.Sprite;
-import nme.events.Event;
-import nme.Lib;
-	
+import flash.display.MovieClip;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.Lib;
 
 /**
  * ...
  * @author Iain Lobb - iainlobb@googlemail.com
  * @author Philippe
  */
-
 class OnScreenJoystickTester extends Sprite
 {
 	private var gamePad1:Gamepad;
@@ -49,7 +47,6 @@ class OnScreenJoystickTester extends Sprite
 	private var car:MovieClip;
 	private var gamePadView1:OnScreenJoystick;
 	private var gamePadView2:OnScreenJoystick;
-	
 
 	public function new() 
 	{
@@ -58,7 +55,6 @@ class OnScreenJoystickTester extends Sprite
 		if (stage != null) init();
 		else addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
-	
 	
 	private function init():Void 
 	{
@@ -69,11 +65,10 @@ class OnScreenJoystickTester extends Sprite
 		
 		addEventListener(Event.ENTER_FRAME, onEnterFrame);
 	}
-		
+	
 	private function createGamepads():Void
 	{
 		gamePad1 = new Gamepad(stage, true);
-
 		gamePad2 = new Gamepad(stage, false, 0.4);
 	}
 	
@@ -140,8 +135,6 @@ class OnScreenJoystickTester extends Sprite
 		addChild(car);
 	}
 	
-	
-	
 	private function onAddedToStage(event:Event):Void
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
@@ -182,5 +175,4 @@ class OnScreenJoystickTester extends Sprite
 		car.x += Math.sin(carAngle) * gamePad2.y * 5;
 		car.y += Math.cos(carAngle) * gamePad2.y * 5;
 	}
-	
 }

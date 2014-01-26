@@ -25,14 +25,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 package com.iainlobb.gamepad;
 
-import nme.display.Sprite;
-import nme.events.Event;
+import flash.display.Sprite;
+import flash.events.Event;
 
 /**
  * ...
  * @author Iain Lobb - iainlobb@googlemail.com
  */
-
 class GamepadView extends Sprite
 {
 	private var ball:Sprite;
@@ -45,7 +44,6 @@ class GamepadView extends Sprite
 	private var gamepad:Gamepad;
 	private var colour:Int;
 	
-	
 	/**
 	 * Visual representation of a Gamepad instance.
 	 */
@@ -53,8 +51,6 @@ class GamepadView extends Sprite
 	{
 		super();
 	}
-	
-	
 	
 	/**
 	 * Initialise the instance.
@@ -73,8 +69,6 @@ class GamepadView extends Sprite
 		
 		addEventListener(Event.ENTER_FRAME, onEnterFrame);
 	}
-	
-	
 	
 	private function drawBackground():Void
 	{

@@ -26,8 +26,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 package com.iainlobb.gamepadtesters;
 
 import com.iainlobb.gamepad.Gamepad;
-import nme.display.MovieClip;
-import nme.display.Stage;
+import flash.display.MovieClip;
+import flash.display.Stage;
 
 /**
  * ...
@@ -46,7 +46,6 @@ class PlatformGameCharacter extends MovieClip
 	
 	private var ticksInAir:Int;
 	private var downwardGravity:Float;
-	
 
 	public function new(colour:Int, stage:Stage) 
 	{
@@ -65,8 +64,6 @@ class PlatformGameCharacter extends MovieClip
 		
 		gamePad = new Gamepad(stage, false, 1);
 	}
-	
-	
 	
 	public function update():Void
 	{
@@ -114,5 +111,4 @@ class PlatformGameCharacter extends MovieClip
 		
 		speedY += (speedY > 0) ? downwardGravity : gravity;
 	}
-	
 }

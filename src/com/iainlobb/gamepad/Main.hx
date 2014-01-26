@@ -3,13 +3,13 @@ package com.iainlobb.gamepad;
 import com.iainlobb.gamepadtesters.GamepadTester;
 import com.iainlobb.gamepadtesters.OnScreenJoystickTester;
 import com.iainlobb.gamepadtesters.PlatformGamepadTester;
-import nme.display.Sprite;
-import nme.events.Event;
-import nme.events.MouseEvent;
-import nme.Lib;
-import nme.text.TextField;
-import nme.text.TextFormat;
-import nme.text.TextFormatAlign;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.Lib;
+import flash.text.TextField;
+import flash.text.TextFormat;
+import flash.text.TextFormatAlign;
 
 /**
  * ...
@@ -24,8 +24,7 @@ class Main extends Sprite
 	private var platformGamepadTesterButton:Sprite;
 	private var onScreenJoystickTesterButton:Sprite;
 	
-	
-	public function new () 
+	public function new() 
 	{
 		super();
 		
@@ -33,12 +32,10 @@ class Main extends Sprite
 		else addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
 	
-	
-	
 	private function init():Void 
 	{
-		stage.scaleMode = nme.display.StageScaleMode.NO_SCALE;
-		stage.align = nme.display.StageAlign.TOP_LEFT;
+		stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
+		stage.align = flash.display.StageAlign.TOP_LEFT;
 
 		#if mobile
 		scaleX = scaleY = stage.stageHeight / 400; 
@@ -120,8 +117,6 @@ class Main extends Sprite
 		}
 	}
 	
-	
-	
 	private function onAddedToStage(event:Event):Void
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
@@ -143,11 +138,8 @@ class Main extends Sprite
 		showOnscreenGameTest();
 	}
 	
-	
-	
 	static public function main() 
 	{
 		Lib.current.addChild(new Main());
 	}
-	
 }

@@ -25,10 +25,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 package com.iainlobb.gamepad;
 
-import nme.display.Stage;
-import nme.events.Event;
-import nme.events.KeyboardEvent;
-import nme.ui.Keyboard;
+import flash.display.Stage;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
+import flash.ui.Keyboard;
 
 /**
  * ...
@@ -46,7 +46,6 @@ class Gamepad
 	 * Simple ease-out speed (range 0 to 1). Pass value of 1 to prevent easing.
 	 */
 	public var ease:Float;
-	
 	
 	/// INPUTS:
 	
@@ -80,7 +79,6 @@ class Gamepad
 	 */
 	public var fire2 (default, null):GamepadInput;
 	
-	
 	/// MULTI-INPUTS (combines 2 or more inputs into 1, e.g. _upLeft requires both up and left to be pressed):
 	
 	/**
@@ -107,7 +105,6 @@ class Gamepad
 	 * A special GamepadMultiInput representing whether any direction is pressed. Get state information from isDown, isPressed, isReleased, downTicks and upTicks. End-users should not need to configure this input.
 	 */
 	public var anyDirection (default, null):GamepadMultiInput;
-	
 	
 	/// THE "STICK":
 	
@@ -141,7 +138,6 @@ class Gamepad
 	private var multiInputs:Array<GamepadMultiInput>;
 	private var targetX:Float;
 	private var targetY:Float;
-	
 	
 	/**
 	 * Gamepad simplifies keyboard input by simulating an analog joystick.
@@ -193,12 +189,11 @@ class Gamepad
 		}
 	}
 	
-	
-	
 	/**
 	 * Destructor.
 	 */
-	public function destroy():Void {
+	public function destroy():Void 
+	{
 		stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 		stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 		stage.removeEventListener(Event.ENTER_FRAME, onEnterFrame);
@@ -342,8 +337,6 @@ class Gamepad
 		for (gamepadInput in inputs) gamepadInput.update();
 	}
 	
-	
-	
 	public function updateState():Void
 	{
 		for(gamepadMultiInput in multiInputs) gamepadMultiInput.update();
@@ -383,8 +376,6 @@ class Gamepad
 		}
 	}
 	
-	
-	
 	private function onEnterFrame(event:Event):Void
 	{
 		step();
@@ -403,5 +394,4 @@ class Gamepad
 		
 		updateState();
 	}
-	
 }
